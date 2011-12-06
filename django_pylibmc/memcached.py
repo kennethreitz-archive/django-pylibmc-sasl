@@ -46,9 +46,11 @@ class PyLibMCCache(BaseMemcachedCache):
         if 'MEMCACHE_USERNAME' in os.environ:
             self.binary = True
 
+        # Bootstrap Authentication from environment.
         self._username = os.environ.get('MEMCACHE_USERNAME', username)
         self._password = os.environ.get('MEMCACHE_PASSWORD', password)
         self._server = os.environ.get('MEMCACHE_SERVERS', server)
+
         super(PyLibMCCache, self).__init__(self._server, params, library=pylibmc,
                                            value_not_found_exception=pylibmc.NotFound)
 
