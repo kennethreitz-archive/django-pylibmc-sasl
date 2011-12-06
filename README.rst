@@ -1,30 +1,25 @@
-================================
-pylibmc cache backend for Django
-================================
+pylibmc-sasl cache backend for Django
+=====================================
 
 This package provides a memcached cache backend for Django using
-`pylibmc <http://github.com/lericson/pylibmc>`_.  You want to use pylibmc because
-it's fast.
+`pylibmc <http://github.com/lericson/pylibmc>`_.  You want to use pylibmc
+because it's fast.
 
+This is a fork of the `django-pylibmc <https://github.com/jbalogh/django-pylibmc>`_
+package. These changes will eventually end up upstream.
 
 Requirements
 ------------
 
-django-pylibmc requires Django 1.3.  It was written and tested on Python 2.7.
+django-pylibmc-sasl requires Django 1.3.  It was written and tested on Python 2.7.x.
 
 
 Installation
 ------------
 
+Get it from `pypi <http://pypi.python.org/pypi/django-pylibmc-sasl>`_::
 
-Get it from `pypi <http://pypi.python.org/pypi/django-pylibmc>`_::
-
-    pip install django-pylibmc
-
-or `github <http://github.com/jbalogh/django-pylibmc>`_::
-
-    pip install -e git://github.com/jbalogh/django-pylibmc.git#egg=django-pylibmc
-
+    pip install django-pylibmc-sasl
 
 Usage
 -----
