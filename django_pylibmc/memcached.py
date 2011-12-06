@@ -41,6 +41,11 @@ class PyLibMCCache(BaseMemcachedCache):
         import os
         self._local = local()
         self.binary = int(params.get('BINARY', False))
+
+        # Authentication requires binary protocol.
+        if 'MEMCACHE_USERNAME' in os.environ:
+            self.binary = True
+
         self._username = os.environ.get('MEMCACHE_USERNAME', username)
         self._password = os.environ.get('MEMCACHE_PASSWORD', password)
         self._server = os.environ.get('MEMCACHE_SERVERS', server)
@@ -55,12 +60,12 @@ class PyLibMCCache(BaseMemcachedCache):
         client = getattr(self._local, 'client', None)
         if client:
             return client
-        
+
         if (self._username != None and self._password != None):
-            client = self._lib.Client(self._servers, 
-            binary=self.binary, 
-            username=self._username, 
-            password=self._password)    
+            client = self._lib.Client(self._servers,
+            binary=self.binary,
+            username=self._username,
+            password=self._password)
         else:
             client = self._lib.Client(self._servers, binary=self.binary)
         if self._options:
