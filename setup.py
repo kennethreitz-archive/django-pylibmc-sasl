@@ -4,13 +4,13 @@ import django_pylibmc
 
 
 setup(
-    name='django-pylibmc',
+    name='django-pylibmc-sasl',
     version=django_pylibmc.__version__,
-    description='Django cache backend using pylibmc',
+    description='Django cache backend using pylibmc-sasl',
     long_description=open('README.rst').read(),
     author='Jeff Balogh',
     author_email='jbalogh@mozilla.com',
-    url='http://github.com/jbalogh/django-pylibmc',
+    url='http://github.com/kennethreitz/django-pylibmc-sasl',
     license='BSD',
     packages=['django_pylibmc'],
     include_package_data=True,
